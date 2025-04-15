@@ -4,7 +4,7 @@
 
 # 1. It writes an autostart file for Plasma that launches this script from within Plasma.
 # 2. It starts a nested Plasma session inside Game Mode (because Game Mode cannot display multiple windows).
-# 3. It launches multiple instances of Minecraft using PollyMC depending on how many controllers are connected (1-4).
+# 3. It launches multiple instances of Minecraft using PrismLauncher depending on how many controllers are connected (1-4).
 # 4. It executes a KWin script that removes borders of all windows and arranges them in a grid.
 
 export target=/tmp
@@ -76,9 +76,9 @@ ____EOF
 }
 
 launchGame() {
-    rm "/home/deck/.var/app/org.fn2006.PollyMC/data/PollyMC/instances/$1/.minecraft/logs/latest.log"
-    flatpak run org.fn2006.PollyMC -l "$1" -a "$2" &
-    while ! grep mclanguage "/home/deck/.var/app/org.fn2006.PollyMC/data/PollyMC/instances/$1/.minecraft/logs/latest.log"; do
+    rm "/home/deck/.var/app/org.prismlauncher.PrismLauncher/data/PrismLauncher/instances/$1/minecraft/logs/latest.log"
+    flatpak run org.prismlauncher.PrismLauncher -l "$1" -a "$2" &
+    while ! grep mclanguage "/home/deck/.var/app/org.prismlauncher.PrismLauncher/data/PrismLauncher/instances/$1/minecraft/logs/latest.log"; do
         sleep 1
     done
     sleep 1
@@ -109,7 +109,7 @@ if [ "$1" = launchFromGameMode ]; then
     qdbus org.kde.Shutdown /Shutdown org.kde.Shutdown.logout
 elif [ "$1" = fromGameMode ]; then
     if [ "$numberOfControllers" -lt 2 ]; then
-        flatpak run org.fn2006.PollyMC -l 1.20.1-1 -a P1
+        flatpak run org.prismlauncher.PrismLauncher -l 1.20.1-1 -a P1
     else
         echo -e "[Desktop Entry]\nExec=$0 launchFromGameMode\nIcon=dialog-scripts\nName=sm64.sh\nPath=\nType=Application\nX-KDE-AutostartScript=true" > ~/.config/autostart/minecraft.desktop
         nestedPlasma

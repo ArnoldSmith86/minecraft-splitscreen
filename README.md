@@ -1,6 +1,6 @@
 # Minecraft Splitscreen for Steam Deck
 
-A script to run multiple instances of Minecraft in splitscreen mode on Steam Deck using PollyMC and KDE Plasma.
+A script to run multiple instances of Minecraft in splitscreen mode on Steam Deck using PrismLauncher and KDE Plasma.
 
 ## Features
 
@@ -13,7 +13,7 @@ A script to run multiple instances of Minecraft in splitscreen mode on Steam Dec
 ## Requirements
 
 - Steam Deck
-- PollyMC (Flatpak)
+- PrismLauncher (Flatpak)
 - Game Mode
 - Controllers (optional)
 - [Steam-Deck.Auto-Disable-Steam-Controller](https://github.com/scawp/Steam-Deck.Auto-Disable-Steam-Controller) (required)
@@ -22,13 +22,11 @@ Note: This script assumes the Steam Deck's internal controller is disabled when 
 
 ## Installation
 
-1. Install PollyMC:
-   ```bash
-   flatpak install flathub org.fn2006.PollyMC
-   ```
+1. Install PrismLauncher:
+   Open Discover and install Prism Launcher
 
 2. Setup Minecraft instances:
-   - Launch PollyMC
+   - Launch PrismLauncher
    - Create a new instance named "1.20.1-1" with Minecraft 1.20.1
    - Install Forge and Framework mod
    - Add `controllable-forge-1.20.1-0.21.7-release.jar` which is https://github.com/MrCrayfish/Controllable/ with a patch to more easily select different controllers per instance
@@ -39,7 +37,7 @@ Note: This script assumes the Steam Deck's internal controller is disabled when 
 
 3. Download `minecraft.sh`:
    ```bash
-   wget https://raw.githubusercontent.com/ArnoldSmith86/Minecraft-Splitscreen/main/minecraft.sh
+   wget https://raw.githubusercontent.com/XikoCat/minecraft-splitscreen-prism/refs/heads/main/minecraft.sh
    chmod +x minecraft.sh
    ```
 
