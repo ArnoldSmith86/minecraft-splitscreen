@@ -1,6 +1,6 @@
 # Minecraft Splitscreen for Steam Deck
 
-A script to run multiple instances of Minecraft in splitscreen mode on Steam Deck using PollyMC and KDE Plasma.
+A script to run multiple instances of Minecraft in splitscreen mode on Steam Deck using PollyMC or PrismLauncher and KDE Plasma.
 
 ## Features
 
@@ -13,7 +13,7 @@ A script to run multiple instances of Minecraft in splitscreen mode on Steam Dec
 ## Requirements
 
 - Steam Deck
-- PollyMC (Flatpak)
+- PollyMC (Flatpak) or PrismLauncher (Flatpak)
 - Game Mode
 - Controllers (optional)
 - [Steam-Deck.Auto-Disable-Steam-Controller](https://github.com/scawp/Steam-Deck.Auto-Disable-Steam-Controller) (required)
@@ -22,13 +22,20 @@ Note: This script assumes the Steam Deck's internal controller is disabled when 
 
 ## Installation
 
-1. Install PollyMC:
+1. Install PollyMC or PrismLauncher
+   
+   PollyMC:
    ```bash
    flatpak install flathub org.fn2006.PollyMC
    ```
 
+   OR
+
+   PrismLauncher:
+   Open Discover and install Prism Launcher
+
 2. Setup Minecraft instances:
-   - Launch PollyMC
+   - Launch PollyMC or PrismLauncher
    - Create a new instance named "1.20.1-1" with Minecraft 1.20.1
    - Install Forge and Framework mod
    - Add `controllable-forge-1.20.1-0.21.7-release.jar` which is https://github.com/MrCrayfish/Controllable/ with a patch to more easily select different controllers per instance
@@ -37,16 +44,21 @@ Note: This script assumes the Steam Deck's internal controller is disabled when 
      - Create an offline account (P1, P2, P3, P4)
      - Set controller index (0, 1, 2, 3 respectively) in the ingame settings for Controllable (controller icon in the settings menu)
 
-3. Download `minecraft.sh`:
+3. Download `minecraft-PollyMC.sh`:
    ```bash
-   wget https://raw.githubusercontent.com/ArnoldSmith86/Minecraft-Splitscreen/main/minecraft.sh
-   chmod +x minecraft.sh
+   wget https://raw.githubusercontent.com/XikoCat/minecraft-splitscreen-prism/refs/heads/main/minecraft-PollyMC.sh
+   chmod +x minecraft-PollyMC.sh
+   ```
+   Download `minecraft-PrismLauncher.sh`:
+   ```bash
+   wget https://raw.githubusercontent.com/XikoCat/minecraft-splitscreen-prism/refs/heads/main/minecraft-PrismLauncher.sh
+   chmod +x minecraft-PrismLauncher.sh
    ```
 
 4. Add to Steam:
    - Open Steam
    - Click "Add a Game" > "Add a Non-Steam Game"
-   - Click "Browse" and select the `minecraft.sh` script
+   - Click "Browse" and select the `minecraft-xxx.sh` script
    - Click "Add Selected Programs"
    - Right-click the new entry in your library
    - Select "Properties"
@@ -56,7 +68,9 @@ Note: This script assumes the Steam Deck's internal controller is disabled when 
 
 When in Desktop Mode, just run the script:
 ```bash
-./minecraft.sh
+./minecraft-PollyMC.sh
+or
+./minecraft-PrismLauncher.sh
 ```
 
 The script will:
