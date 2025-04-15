@@ -44,16 +44,21 @@ Note: This script assumes the Steam Deck's internal controller is disabled when 
      - Create an offline account (P1, P2, P3, P4)
      - Set controller index (0, 1, 2, 3 respectively) in the ingame settings for Controllable (controller icon in the settings menu)
 
-3. Download `minecraft.sh`:
+3. Download `minecraft-PollyMC.sh`:
    ```bash
-   wget https://raw.githubusercontent.com/XikoCat/minecraft-splitscreen-prism/refs/heads/main/minecraft.sh
-   chmod +x minecraft.sh
+   wget https://raw.githubusercontent.com/XikoCat/minecraft-splitscreen-prism/refs/heads/main/minecraft-PollyMC.sh
+   chmod +x minecraft-PollyMC.sh
+   ```
+   Download `minecraft-PrismLauncher.sh`:
+   ```bash
+   wget https://raw.githubusercontent.com/XikoCat/minecraft-splitscreen-prism/refs/heads/main/minecraft-PrismLauncher.sh
+   chmod +x minecraft-PrismLauncher.sh
    ```
 
 4. Add to Steam:
    - Open Steam
    - Click "Add a Game" > "Add a Non-Steam Game"
-   - Click "Browse" and select the `minecraft.sh` script
+   - Click "Browse" and select the `minecraft-xxx.sh` script
    - Click "Add Selected Programs"
    - Right-click the new entry in your library
    - Select "Properties"
@@ -63,7 +68,9 @@ Note: This script assumes the Steam Deck's internal controller is disabled when 
 
 When in Desktop Mode, just run the script:
 ```bash
-./minecraft.sh
+./minecraft-PollyMC.sh
+or
+./minecraft-PrismLauncher.sh
 ```
 
 The script will:
