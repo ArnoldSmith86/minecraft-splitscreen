@@ -112,7 +112,7 @@ ________________EOF
 # launches Minecraft with power saving and notifications disabled and waits until a new window appears
 launchGame() {
     windowCountBeforeLaunch=$(xwininfo -root -tree | grep 854x480 | wc -l)
-    kde-inhibit --power --screenSaver --colorCorrect --notifications ./polyMC-Linux-x86_64.AppImage -l "$1" -a "$2" &
+    kde-inhibit --power --screenSaver --colorCorrect --notifications ./PolyMC-Linux-x86_64.AppImage -l "$1" -a "$2" &
     echo $! >> minecraft.pid
     # wait for the game window to appear so the order of the windows is correct
     while [ $(xwininfo -root -tree | grep 854x480 | wc -l) -le $windowCountBeforeLaunch ]; do
@@ -158,7 +158,7 @@ launchGames() {
         launchGames
     else
         if [ "$numberOfControllers" -lt 2 ]; then
-            ./polyMC-Linux-x86_64.AppImage -l 1.20.1-1 -a P1
+            ./PolyMC-Linux-x86_64.AppImage -l 1.20.1-1 -a P1
         else
             SCRIPT_PATH="$(readlink -f "$0")"
             mkdir -p ~/.config/autostart
