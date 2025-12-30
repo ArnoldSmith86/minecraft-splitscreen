@@ -6,8 +6,8 @@
 
 # --- Config ---
 APPNAME  = "Minecraft Splitscreen"
-EXE      = '/home/deck/.local/share/PollyMC/minecraft.sh'
-STARTDIR = "/home/deck/.local/share/PollyMC"
+EXE      = '/home/deck/.local/share/PolyMC/minecraft.sh'
+STARTDIR = "/home/deck/.local/share/PolyMC"
 
 STEAMGRIDDB_IMAGES = {
     "p": "https://cdn2.steamgriddb.com/grid/a73027901f88055aaa0fd1a9e25d36c7.png",

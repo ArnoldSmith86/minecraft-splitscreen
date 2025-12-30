@@ -1,5 +1,5 @@
 #!/bin/bash
-targetDir=$HOME/.local/share/PollyMC
+targetDir=$HOME/.local/share/PolyMC
 
 curlProgress() {
     if [ ! -f "$3" ]; then
@@ -27,17 +27,17 @@ fail() {
 
 if [ ! -d "$targetDir" ]; then
     [ $(df /home | awk '$6 == "/home" { print $4 }') -lt 2000000 ] && fail 'Please make sure you have at least 2GB available on the internal storage.'
-    zenity --question --text='This script will download the PollyMC launcher, install a few mods for making Splitscreen work and add Minecraft to Steam.\n\nInstall it?' || exit 1
+    zenity --question --text='This script will download the PolyMC launcher, install a few mods for making Splitscreen work and add Minecraft to Steam.\n\nInstall it?' || exit 1
 fi
 
 mkdir -p $targetDir
 pushd $targetDir >/dev/null
 
-    curlProgress 040022443ca968ef25913bcc72ddd507 \
-                 PollyMC \
-                 PollyMC-Linux-x86_64.AppImage \
-                 https://github.com/fn2006/PollyMC/releases/download/8.0/PollyMC-Linux-x86_64.AppImage
-    chmod +x "PollyMC-Linux-x86_64.AppImage"
+    curlProgress 9b5849c657738799469ab7517ab36baf \
+                 PolyMC \
+                 PolyMC-Linux-x86_64.AppImage \
+                 https://github.com/PolyMC/PolyMC/releases/download/7.0/PolyMC-Linux-7.0-x86_64.AppImage
+    chmod +x "PolyMC-Linux-x86_64.AppImage"
 
     if [ ! -f "jdk-17.0.12/bin/java" ]; then
         curlProgress e8df6a595078d41b993a71ed55e503ab \
@@ -56,9 +56,9 @@ pushd $targetDir >/dev/null
         echo "✅ Java already present."
     fi
 
-    if [ ! -f pollymc.cfg ]; then
-        # create pollymc.cfg
-        sed 's/^            //' <<________EOF > pollymc.cfg
+    if [ ! -f polymc.cfg ]; then
+        # create polymc.cfg
+        sed 's/^            //' <<________EOF > polymc.cfg
             [General]
             ApplicationTheme=system
             ConfigVersion=1.2
@@ -319,7 +319,7 @@ ________EOF
     chmod +x minecraft.sh
 
     # add the launch wrapper to Steam
-    if ! grep -q local/share/PollyMC/minecraft ~/.steam/steam/userdata/*/config/shortcuts.vdf; then
+    if ! grep -q local/share/PolyMC/minecraft ~/.steam/steam/userdata/*/config/shortcuts.vdf; then
         rm -f add-to-steam.py
         curlProgress 3426e204f94575d63e9ed40cb4603d02 \
                      'Shortcut creation script' \
