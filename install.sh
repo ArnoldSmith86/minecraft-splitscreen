@@ -321,7 +321,7 @@ ________EOF
     # add the launch wrapper to Steam
     if ! grep -q local/share/PolyMC/minecraft ~/.steam/steam/userdata/*/config/shortcuts.vdf; then
         rm -f add-to-steam.py
-        curlProgress 3426e204f94575d63e9ed40cb4603d02 \
+        curlProgress 6383cc991f751b6dc5fdd2a3f5d83b7c \
                      'Shortcut creation script' \
                      add-to-steam.py \
                      https://raw.githubusercontent.com/ArnoldSmith86/minecraft-splitscreen/refs/heads/main/add-to-steam.py
