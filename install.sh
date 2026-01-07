@@ -69,7 +69,6 @@ pushd $targetDir >/dev/null
             LastHostname=$HOSTNAME
             MaxMemAlloc=4096
             MinMemAlloc=512
-            UseNativeOpenAL=true
 ________EOF
     fi
 
@@ -135,7 +134,6 @@ ________________EOF
             fi
 
             if [ ! -f "instance.cfg" ]; then
-                # create config.json
                 sed 's/^                    //' <<________________EOF > "instance.cfg"
                     [General]
                     ConfigVersion=1.2
@@ -144,11 +142,12 @@ ________________EOF
                     OverrideJavaLocation=true
                     iconKey=default
                     name=1.20.1-$i
+                    JvmArgs=-Dorg.lwjgl.openal.libname=/usr/lib/libopenal.so
+                    OverrideJavaArgs=true
 ________________EOF
             fi
 
             if [ ! -f "mmc-pack.json" ]; then
-                # create components.json
                 sed 's/^                    //' <<________________EOF > "mmc-pack.json"
                     {
                         "components": [

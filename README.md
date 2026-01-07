@@ -1,6 +1,6 @@
 # Minecraft Splitscreen for Steam Deck
 
-A script to run multiple instances of Minecraft in splitscreen mode on Steam Deck using PollyMC and KDE Plasma.
+A script to run multiple instances of Minecraft in splitscreen mode on Steam Deck using PolyMC and KDE Plasma.
 
 ## Features
 
@@ -15,9 +15,9 @@ A script to run multiple instances of Minecraft in splitscreen mode on Steam Dec
 Download [InstallMinecraft.desktop](https://github.com/ArnoldSmith86/minecraft-splitscreen/releases/download/0.1/InstallMinecraft.desktop) with your Steam Deck in Desktop Mode and open it in the file browser Dolphin.
 
 It should:
-- Download PollyMC and Java 17
+- Download PolyMC and Java 17
 - Create 4 Minecraft 1.20.1 instances with a pre-configured Controllable mod so each instance can be controlled using a different controller
-- Create 4 offline accounts in PollyMC
+- Create 4 offline accounts in PolyMC
 - Download my launch wrapper that starts four Minecraft instances in a splitscreen configuration from Game Mode
 - Shutdown Steam in order to add the launch wrapper to Steam with artwork from steamgriddb.com
 - Restart Steam (still in Desktop Mode)
